@@ -1,0 +1,21 @@
+.form {
+    display:flex;
+    flex-direction: column;
+    margin:5px;
+ }
+ 
+mat-sidenav-container{
+    height: calc(205vh - 105vh);
+    color : #C59D5F
+}
+
+mat-sidenav{
+    width: 350px;
+    background-color: #C59D5F;
+}
+
+.toolbar{
+    color:white;
+    background-color: #C59D5F;
+    /* border-bottom: ; */
+}

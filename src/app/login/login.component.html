@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="form-control">
+        <label for="id">Utilisateur</label>
+        <input 
+            class="input-block"
+            type="null" 
+            name="id" 
+            [(ngModel)]="id" 
+            id = "id" 
+            placeholder="Numéro étudiant"
+        />
+    </div>
+    <div class="form-control">
+        <label for="password">Mot de passe</label>
+        <input 
+            class="input-block"
+            type="null" 
+            name="password" 
+            [(ngModel)]="password" 
+            id = "password"
+            placeholder="Mot de passe"
+        />
+    </div>
+    <div>
+        <app-button text="Se connecter" (click)="onSubmit()">
+        </app-button>
+        <mat-checkbox class="alignment">Rester connecté</mat-checkbox>
+        <p class="cursor">Mot de passe oublié</p>
+        <a (click)="onNewConnexion(connexion)" class="cursor">S'inscrire</a>
+    </div>
+</div>

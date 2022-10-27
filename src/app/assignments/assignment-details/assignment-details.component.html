@@ -1,0 +1,10 @@
+<div [ngClass]="{ rendu : task.rendu }" class="task" (dblclick)="onToggle(task)">
+    <h3>
+        {{task.nom}}
+        <fa-icon 
+        [icon]="faTimes"
+        (click)="onDelete(task)"
+        class = "clickableicon"
+        ></fa-icon>
+    </h3>
+</div>

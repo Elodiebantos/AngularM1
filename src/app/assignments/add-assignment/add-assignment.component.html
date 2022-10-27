@@ -1,0 +1,34 @@
+<form class="add-form" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+        <label for="text">Devoir</label>
+        <input 
+            class="input-block"
+            type="text" 
+            name="nom" 
+            [(ngModel)]="nom" 
+            id = "nom" 
+            placeholder="Ajouter un devoir"
+        />
+    </div>
+    <div class="form-control">
+        <label for="day">Date et heure</label>
+        <input 
+            class="input-block"
+            type="text" 
+            name="DateDeRendu" 
+            [(ngModel)]="DateDeRendu" 
+            id = "date" 
+            placeholder="Ajouter une date de rendu"
+        />
+    </div>
+    <div class="form-control form-control-check">
+        <label for="reminder">Rendu</label>
+        <input 
+            type="checkbox" 
+            name="rendu" 
+            [(ngModel)]="rendu" 
+            id = "rendu"
+        />
+    </div>
+    <input type="submit" value="Ajouter" class="btn btn-block"/>
+</form>

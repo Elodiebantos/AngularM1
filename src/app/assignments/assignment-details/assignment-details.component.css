@@ -1,0 +1,17 @@
+.task {
+    background : rgb(221, 227, 234);
+    margin : 2px;
+    padding : 10px 10px;
+}
+
+/* Permet de jaunir le côté du devoir kdont on veut être rappelé */
+
+.task.reminder {
+    border-left : 10px solid rgb(226, 226, 94);
+}
+
+.task h3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
