@@ -45,6 +45,11 @@ export class TasksService {
     // return this.http.post<Task>(this.mangoUrl, task, httpOptions);
   }
 
+  updateTaskRendu(task:Task):Observable<Task>{
+    const url = `${this.apiUrl}/${task}`;
+    return this.http.put<Task>(url,task,httpOptions);
+  }
+
 
 
 

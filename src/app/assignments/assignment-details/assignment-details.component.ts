@@ -25,7 +25,7 @@ export class AssignmentDetailsComponent implements OnInit {
   }
 
   onToggle(task:Task){
-    this.onToggleReminder.emit(this.task);
+    this.onToggleReminder.emit(task);
   }
 
 }

@@ -7,7 +7,7 @@
 /* Permet de jaunir le côté du devoir kdont on veut être rappelé */
 
 .task.reminder {
-    border-left : 10px solid rgb(226, 226, 94);
+    border-left : 7px solid #C59D5F;
 }
 
 .task h3 {

@@ -25,10 +25,14 @@ export class ListedesdevoirsComponent implements OnInit {
   }
 
   // Permet à l'étudiant de demander un rappel de ses devoirs
-  toggleReminder(task: Task) {
+  toggleRendu(task: Task) {
     task.rendu = !task.rendu;
-    this.taskService
-      .updateTaskReminder(task).subscribe();
+    this.taskService.updateTaskRendu(task).subscribe();
+  }
+
+  toggleReminder(task: Task) {
+    task.reminder = !task.reminder;
+    this.taskService.updateTaskReminder(task).subscribe();
   }
 
   addNewTask(task:Task){

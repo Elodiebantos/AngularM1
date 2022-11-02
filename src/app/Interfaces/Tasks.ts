@@ -3,4 +3,5 @@ export interface Task {
     nom: string;
     DateDeRendu: Date;
     rendu:boolean;
+    reminder:boolean;
 }

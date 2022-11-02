@@ -13,6 +13,7 @@ export class AddAssignmentComponent implements OnInit {
   nom!: string;
   DateDeRendu!:Date;
   rendu!:boolean;
+  reminder!:boolean;
 
   constructor(){}
 
@@ -34,13 +35,10 @@ export class AddAssignmentComponent implements OnInit {
       nom:this.nom,
       DateDeRendu:this.DateDeRendu,
       rendu:this.rendu,
+      reminder:this.reminder
     }
 
     this.onAddTask.emit(newTask);
-    this.id='';
-    this.nom='';
-    this.DateDeRendu=new Date;
-    this.rendu=false;
   }
 
 
