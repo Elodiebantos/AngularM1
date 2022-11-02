@@ -42,6 +42,14 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit():void{
+    if (!this.id){ //Si on a pas rempli le nom d'utilisateur
+      alert('Veuillez ajouter un numéro étudiant');
+      return;
+    }
+    if (!this.password){ //Si on a pas rempli le mot de passe
+      alert('Veuillez ajouter un mot de passe.');
+      return;
+    }
     console.log()
     this.connexionservice.login(this.connexion).subscribe(
       data => {

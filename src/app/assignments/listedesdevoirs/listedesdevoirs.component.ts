@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../../Interfaces/Tasks';
 import { TasksService } from '../../services/tasks.service';
+import { UiService } from 'src/app/services/ui.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-listedesdevoirs',
@@ -9,8 +11,14 @@ import { TasksService } from '../../services/tasks.service';
 })
 export class ListedesdevoirsComponent implements OnInit {
   tasks: Task[] = [];
+  showAddTask!:boolean;
+  subscription: Subscription;
 
-  constructor(public taskService: TasksService){}
+  constructor(public taskService: TasksService,public uiService:UiService){
+    this.subscription = this.uiService
+    .onToggle()
+    .subscribe((value) => (this.showAddTask = value));
+  }
 
   ngOnInit(): void {
     this.taskService.getTasks()
@@ -27,7 +35,9 @@ export class ListedesdevoirsComponent implements OnInit {
   // Permet à l'étudiant de demander un rappel de ses devoirs
   toggleRendu(task: Task) {
     task.rendu = !task.rendu;
-    this.taskService.updateTaskRendu(task).subscribe();
+    this.taskService
+    .updateTaskRendu(task)
+    .subscribe();
   }
 
   toggleReminder(task: Task) {
@@ -44,6 +54,10 @@ export class ListedesdevoirsComponent implements OnInit {
   addTask(task:Task){ 
     this.taskService
       .addTask(task).subscribe((task) => (this.tasks.push(task)));
+  }
+
+  toggleAddTask(){
+    this.uiService.toggleAddTask();
   }
 
 }

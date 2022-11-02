@@ -1,5 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Task } from 'src/app/Interfaces/Tasks';
+import { UiService } from 'src/app/services/ui.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-add-assignment',
@@ -9,13 +11,20 @@ import { Task } from 'src/app/Interfaces/Tasks';
 
 export class AddAssignmentComponent implements OnInit {
   @Output() onAddTask: EventEmitter<Task> = new EventEmitter();
+  
   id!:string;
   nom!: string;
   DateDeRendu!:Date;
   rendu!:boolean;
   reminder!:boolean;
+  showAddTask!: boolean;
+  subscription : Subscription;
 
-  constructor(){}
+  constructor(public uiService:UiService){
+    this.subscription = this.uiService
+    .onToggle()
+    .subscribe((value) => (this.showAddTask = value));
+  }
 
   ngOnInit(): void {
   }
@@ -37,7 +46,6 @@ export class AddAssignmentComponent implements OnInit {
       rendu:this.rendu,
       reminder:this.reminder
     }
-
     this.onAddTask.emit(newTask);
   }
 

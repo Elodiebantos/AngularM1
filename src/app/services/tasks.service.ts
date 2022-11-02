@@ -31,6 +31,8 @@ export class TasksService {
   deleteTask(nom: string): Observable<unknown> {
     const url = `${this.apiUrl}/${nom}`;
     // const url = `${this.mangoUrl}/${nom}`;
+    location.reload()
+
     return this.http.delete(url, httpOptions);
   }
 

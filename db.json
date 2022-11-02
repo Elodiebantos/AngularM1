@@ -1,15 +1,12 @@
 {
-  "tasks": [
-    {
-      "nom": "Devoir",
-      "DateDeRendu": "11-11-2022",
-      "id": 1
-    }
-  ],
+  "tasks": [],
   "login": [
     {
       "id": "Numero etudiant",
       "password": "Mot de passe"
+    },
+    {
+      "id": "9QMMFxT"
     }
   ]
 }
