@@ -16,6 +16,11 @@ The list of assignments is available on `http://localhost:5000/tasks`.
 The list of connexions is available on `http://localhost:5000/login`
 All data from the Json server are available on the file db.json in the main branch of the project
 
+## MongoDB database
+
+Apply the command `cd api/api` to access the MangoDB database launcher. Then run the command `node server.js` to run the database. Now, you can access to all the tasks by following the route "Liste des devoirs" in the sidenav bar.
+
+
 ## Code scaffolding
 
 

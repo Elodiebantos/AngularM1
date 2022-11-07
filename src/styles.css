@@ -66,6 +66,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     color: #C59D5F;
 }
 
-.animations{
-    trigger:'learn-more';
+/* Utilisation des animations disponibles sur animate.css */
+/* Utilisations d'animations disponibles sur les librairies javascript */
+
+
+/* 3 types d'états en angular : void, default et custom  */
+/* Zyppy fonctionne avec deux types d'états : collapse et expanded */
+
+.stretch{
+    animation-name: stretch;
+    animation-duration: 1.5s;
 }
