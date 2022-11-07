@@ -15,10 +15,6 @@ ul {
     margin-top: 0;
 }
 
-.list-style-none {
-    list-style: none !important;
-}
-
 .col-12 {
     width: 100%;
 }
@@ -27,14 +23,24 @@ ul {
     flex-wrap: wrap !important;
 }
 
-footer{
+.footer{
     display: block;
+    padding: 0.5rem !important;
+    border-top: 1px solid #C59D5F;
 }
 
 .mb-2 {
-    margin-bottom: 8px !important;
+    margin-bottom: 10px !important;
 }
 
 .mr-3 {
-    margin-right: 16px !important;
+    margin-right: 20px !important;
+}
+
+.bg-footer{
+    background-color: black;
+}
+
+.footertext{
+    color:#C59D5F;
 }

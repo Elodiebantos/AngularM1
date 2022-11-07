@@ -5,16 +5,21 @@ import { ListedesdevoirsComponent } from './assignments/listedesdevoirs/listedes
 import { ModificationComponent } from './assignments/modification/modification.component';
 import { SuppressionComponent } from './assignments/suppression/suppression.component';
 import { GenerationdonneestestComponent } from './assignments/generationdonneestest/generationdonneestest.component';
-import { HomeComponent } from './assignments/home/home.component';
-import { AssignmentsComponent } from './assignments/assignments.component';
 import { LoginComponent } from './login/login.component';
+import { ContactsComponent } from './footer/contacts/contacts.component';
+import { AproposComponent } from './footer/apropos/apropos.component';
+import { PlanDuSiteComponent } from './footer/plan-du-site/plan-du-site.component';
+import { AccueilComponent } from './accueil/accueil.component';
 
 const routes: Routes = [
   {
     path:"login", component:LoginComponent
   },
   {
-    path:"", component:HomeComponent
+    path:"home",component:AccueilComponent
+  },
+  {
+    path:"",component:AccueilComponent
   },
   {
     path:"listedesdevoirs", component:ListedesdevoirsComponent
@@ -29,8 +34,14 @@ const routes: Routes = [
     path:"generate",component:GenerationdonneestestComponent
   },
   {
-    path:"home", component:AssignmentsComponent
+    path:"contacts", component:ContactsComponent
   },
+  {
+    path:"A propos", component:AproposComponent
+  },
+  {
+    path:"plandusite", component:PlanDuSiteComponent
+  }
 ];
 
 

@@ -1,5 +1,6 @@
 <div class="container"> 
-    <h2>Liste des devoirs à rendre</h2><app-button color = "{{ showAddTask ? '#C59D5F':'black' }}" text="{{ showAddTask ? 'Masquer':'Montrer' }}" (click)="toggleAddTask()"></app-button>
+    <h2>Liste des devoirs à rendre</h2>
+    <app-button color = "{{ showAddTask ? '#C59D5F':'black' }}" text="{{ showAddTask ? 'Masquer':'Montrer' }}" (click)="toggleAddTask()"></app-button>
     <app-add-assignment (onAddTask)="addTask($event)"></app-add-assignment>
     <app-assignment-details 
             *ngFor="let task of tasks" 

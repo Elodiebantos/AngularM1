@@ -12,17 +12,17 @@
         </button>
         <h1>Site de rendu des devoirs</h1>
         <span class="fill"></span>
-        <img src="assets/image/MIAGE_LOGO_MINIATURE_mini.png">
-        <app-button text="Connexion" (click)="connect()"></app-button>
+        <img class="img-alignment" src="assets/image/MIAGE_LOGO-SEUL_BLANC.png">
+        <button class="button" (click)="connect()"><mat-icon fontIcon="account_circle"></mat-icon>Connexion</button>
     </mat-toolbar-row>
 </mat-toolbar>
 <mat-sidenav-container>
-    <mat-sidenav [(opened)]="opened" mode="push"> 
+    <mat-sidenav class="mat-drawer-inner-container" [(opened)]="opened" mode="push"> 
         <mat-list>
             <mat-list-item><button mat-button (click)="opened=!opened">
                 <mat-icon fontIcon="assignment">
                 </mat-icon>
-                <a routerLink="/listedesdevoirs">
+                <a class="text-color" routerLink="/listedesdevoirs">
                     Liste des devoirs
                 </a>
             </button>
@@ -31,7 +31,7 @@
                 <button mat-button (click)="opened=!opened">
                     <mat-icon fontIcon="assignment_returned">
                     </mat-icon>
-                    <a routerLink="/modif"> 
+                    <a class="text-color" routerLink="/modif"> 
                         Modification d'un devoir 
                     </a> 
                 </button>
@@ -40,7 +40,7 @@
                 <button mat-button (click)="opened=!opened">
                     <mat-icon fontIcon="delete_forever">
                     </mat-icon>
-                    <a routerLink="/suppr"> 
+                    <a class="text-color" routerLink="/suppr"> 
                         Suppression d'un devoir
                     </a>
                 </button>
@@ -49,7 +49,7 @@
                 <button mat-button (click)="opened=!opened">
                     <mat-icon fontIcon="autorenew">
                     </mat-icon>
-                    <a routerLink="/generate"> 
+                    <a class="text-color" routerLink="/generate"> 
                         Génération de données de test 
                     </a>
                 </button>
@@ -60,3 +60,4 @@
         <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>
+

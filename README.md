@@ -37,10 +37,10 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 Assignments components are related to the assignments of the student. They are supposed to be private so they are not supposed to be accessible by people that didn't sign up. There is several components in the assignments folder : add-assignment and assignment-details, that manage how an assignment can be added or deleted according to its name and date. 
 
 
-## Home component
+## Accueil component
 
 
-The home component is the main page of the website. It is the first page on which the student appears when they are entering the website. Home is a public page.
+The component called "accueil" or home component is the main page of the website. It is the first page on which the student appears when they are entering the website. Home is a public page.
 
 ## Interfaces
 

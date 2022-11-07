@@ -6,16 +6,35 @@
  
 mat-sidenav-container{
     height: calc(205vh - 105vh);
-    color : #C59D5F
+    color : black
 }
 
 mat-sidenav{
     width: 350px;
-    background-color: #C59D5F;
+    background-color: black;
 }
 
 .toolbar{
     color:white;
-    background-color: #C59D5F;
+    background-color: black;
     /* border-bottom: ; */
+}
+
+.mat-drawer-inner-container{
+    background-color: black;
+}
+
+.text-color{
+    color:white;
+}
+
+ul{
+    padding: 0;
+    margin: 100px;
+    list-style-type: none;
+}
+
+.button{
+    background:#C59D5F;
+    color:white;
 }

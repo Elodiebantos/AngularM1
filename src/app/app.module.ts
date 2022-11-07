@@ -21,7 +21,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
-import { AssignmentsComponent } from './assignments/assignments.component';
 import { AssignmentDetailsComponent } from './assignments/assignment-details/assignment-details.component';
 import { AddAssignmentComponent } from './assignments/add-assignment/add-assignment.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -30,15 +29,16 @@ import { MenuComponent } from './menu/menu.component';
 import { SuppressionComponent } from './assignments/suppression/suppression.component';
 import { ListedesdevoirsComponent } from './assignments/listedesdevoirs/listedesdevoirs.component';
 import { ModificationComponent } from './assignments/modification/modification.component';
-import { HomeComponent } from './assignments/home/home.component';
 import { GenerationdonneestestComponent } from './assignments/generationdonneestest/generationdonneestest.component';
 import { LoginComponent } from './login/login.component';
-
+import { ContactsComponent } from './footer/contacts/contacts.component';
+import { AproposComponent } from './footer/apropos/apropos.component';
+import { PlanDuSiteComponent } from './footer/plan-du-site/plan-du-site.component';
+import { AccueilComponent } from './accueil/accueil.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AssignmentsComponent,
     AssignmentDetailsComponent,
     AddAssignmentComponent,
     ButtonComponent,
@@ -46,9 +46,12 @@ import { LoginComponent } from './login/login.component';
     SuppressionComponent,
     ListedesdevoirsComponent,
     ModificationComponent,
-    HomeComponent,
     GenerationdonneestestComponent,
-    LoginComponent
+    LoginComponent,
+    ContactsComponent,
+    AproposComponent,
+    PlanDuSiteComponent,
+    AccueilComponent
   ],
   imports: [
     BrowserModule,

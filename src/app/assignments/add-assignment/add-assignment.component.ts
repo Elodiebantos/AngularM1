@@ -40,7 +40,8 @@ export class AddAssignmentComponent implements OnInit {
     }
 
     const newTask = { 
-      id:this.id, 
+      id:this.id,
+      identifiant:Math.floor(Math.random()*1000),
       nom:this.nom,
       DateDeRendu:this.DateDeRendu,
       rendu:this.rendu,

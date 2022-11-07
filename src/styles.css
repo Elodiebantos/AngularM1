@@ -14,7 +14,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     max-width: 500px;
     margin: 30px auto;
     overflow: auto;
-    min-height: 300px;
+    min-height: 100px;
     border: 1px solid black;
     padding: 30px;
     border-radius: 5px;
@@ -22,7 +22,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .btn{
     display: inline-block;
-    background: black;
+    background: #C59D5F;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -51,4 +51,21 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .align-center{
     text-align: center;
+}
+
+.img-alignment{
+    width: auto;
+    height: auto
+}
+
+.list-style-none {
+    list-style: none !important;
+}
+
+.main-color{
+    color: #C59D5F;
+}
+
+.animations{
+    trigger:'learn-more';
 }
