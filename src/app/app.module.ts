@@ -35,6 +35,7 @@ import { ContactsComponent } from './footer/contacts/contacts.component';
 import { AproposComponent } from './footer/apropos/apropos.component';
 import { PlanDuSiteComponent } from './footer/plan-du-site/plan-du-site.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { EditAssignmentComponent } from './assignments/edit-assignment/edit-assignment.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { AccueilComponent } from './accueil/accueil.component';
     ContactsComponent,
     AproposComponent,
     PlanDuSiteComponent,
-    AccueilComponent
+    AccueilComponent,
+    EditAssignmentComponent
   ],
   imports: [
     BrowserModule,

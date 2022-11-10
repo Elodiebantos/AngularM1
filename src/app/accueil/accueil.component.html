@@ -1,11 +1,11 @@
 <div>
     <img class="img-alignment" src="assets/image/277672060_1364674820701891_6480569130382352976_n.png">
-    <nav class="open-close-container">
+    <nav style="text-align:center" class="open-close-container">
         <h1 (click)="toggle()" class="clickableicon">Bienvenue sur le site de rendu des devoirs</h1>
     </nav>
-    <div  [@openClose]="isOpen? 'open' : 'closed'">
+    <div  style="text-align:match-parent" [@openClose]="isOpen? 'open' : 'closed'">
         <p>
-            Ce site est dédié aux étudiants de MIAGE M1 et M2.
+            Ce site est destiné aux étudiants de MIAGE en M1 et M2.
         </p>
         <p>
             Le site de rendu des devoirs est un espace de travail qui permet de tenir une liste des devoirs qu'ils auront à rendre au cours du semestre, activer un rappel, éditer ou déposer un devoir.

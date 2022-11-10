@@ -1,0 +1,19 @@
+<div class="container">
+ <h2>Edition de la tâche {{task.nom}} </h2>
+ <form ngForm class="form" #formupdate (submit)="onSaveAssignment(); formupdate.reset(); ">
+    <div class="form-control">
+    <label>Nom</label>
+     <input class="input-block" placeholder="Edition du nom" [(ngModel)]="nom" name="task-name">
+    </div>
+    <div class="form-control">
+    <label>Date</label>
+     <input class="input-block" [matDatepicker]="picker" placeholder="Edition de la date" [(ngModel)]="DateDeRendu" name="date">
+    <mat-datepicker-toggle matSuffix [for]="picker">
+    </mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    </div>
+    <button class="btn btn-block"> Sauvegarder </button>
+  </form>
+</div>
+   
+   

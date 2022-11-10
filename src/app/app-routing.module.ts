@@ -10,6 +10,7 @@ import { ContactsComponent } from './footer/contacts/contacts.component';
 import { AproposComponent } from './footer/apropos/apropos.component';
 import { PlanDuSiteComponent } from './footer/plan-du-site/plan-du-site.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { EditAssignmentComponent } from './assignments/edit-assignment/edit-assignment.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,9 @@ const routes: Routes = [
   },
   {
     path:"plandusite", component:PlanDuSiteComponent
+  },
+  {
+    path:"edition", component:EditAssignmentComponent
   }
 ];
 

@@ -20,6 +20,8 @@ export class AddAssignmentComponent implements OnInit {
   showAddTask!: boolean;
   subscription : Subscription;
 
+  // UIService permet de montrer et de cacher les modules d'ajout et de suppression de tâches
+
   constructor(public uiService:UiService){
     this.subscription = this.uiService
     .onToggle()

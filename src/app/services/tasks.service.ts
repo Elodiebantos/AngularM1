@@ -4,6 +4,7 @@ import {Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Task } from '../Interfaces/Tasks';
 import { map,tap } from 'rxjs/operators';
+import { LoggingService } from './loggin.service';
 
 const httpOptions = { 
   headers : new HttpHeaders({
@@ -21,25 +22,36 @@ export class TasksService {
   Task!:Task;
 
   // apiUrl = 'http://localhost:5000/tasks'
-  mangoUrl = 'http://localhost:8010/api/assignments'
-  constructor(private http: HttpClient) { }
+  mongoUrl = 'http://localhost:8010/api/assignments'
+  constructor(private logginService:LoggingService,
+    private http:HttpClient) { }
 
   getTasks(): Observable<Task[]> {
     // return this.http.get<Task[]>(this.apiUrl).pipe(catchError(this.handleError));
-    return this.http.get<Task[]>(this.mangoUrl).pipe(catchError(this.handleError))
+    return this.http.get<Task[]>(this.mongoUrl).pipe(catchError(this.handleError))
   }
 
   deleteTask(nom: string): Observable<unknown> {
     // const url = `${this.apiUrl}/${nom}`;
-    const url = `${this.mangoUrl}/${nom}`;
-    location.reload()
+    const url = `${this.mongoUrl}/${nom}`;
+    location.reload();
 
     return this.http.delete(url, httpOptions);
   }
 
   updateTaskReminder(task: Task): Observable<Task>{
-    const url = `${this.mangoUrl}?${task.nom}`;
+    const url = `${this.mongoUrl}?${task.nom}`;
     return this.http.put<Task>(url, task, httpOptions);
+  }
+
+  updateTasks(task:Task):string {
+    // On n'a besoin de rien faire pour le moment, puisque l'assignment est passé par référence
+    // et que l'objet est modifié dans le tableau
+    // Plus tard on utilisera un Web Service distant...
+    this.logginService.log(task.nom, "modifié !");
+
+    return ("Tâche modifiée");
+
   }
 
   addTask(task: Task): Observable<Task>{
@@ -48,7 +60,7 @@ export class TasksService {
     //   a.nom += " transformé avec un pipe"
     //   return a;
     // }));
-    return this.http.post<Task>(this.mangoUrl, task, httpOptions)
+    return this.http.post<Task>(this.mongoUrl, task, httpOptions)
     .pipe(map(a => {
       a.nom += " transformé avec un pipe"
       return a;
@@ -62,7 +74,7 @@ export class TasksService {
   updateTaskRendu(task:Task):Observable<Task>{
     // const url = `${this.apiUrl}/${task}`;
     // return this.http.put<Task>(url,task,httpOptions);
-    return this.http.put<Task>(this.mangoUrl,task,httpOptions);
+    return this.http.put<Task>(this.mongoUrl,task,httpOptions);
   }
 
 
