@@ -38,3 +38,12 @@ ul{
     background:#C59D5F;
     color:white;
 }
+
+.icon{
+    color: white;
+    margin-right: 10px;
+}
+
+.list-item{
+    margin-top: 20px;
+}

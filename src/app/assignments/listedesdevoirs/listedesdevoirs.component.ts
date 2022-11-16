@@ -4,6 +4,8 @@ import { TasksService } from '../../services/tasks.service';
 import { UiService } from 'src/app/services/ui.service';
 import { Subscription } from 'rxjs';
 
+import { BDTasks } from '../data';
+
 @Component({
   selector: 'app-listedesdevoirs',
   templateUrl: './listedesdevoirs.component.html',
@@ -28,7 +30,7 @@ export class ListedesdevoirsComponent implements OnInit {
 
   deleteTask(task: Task) {
     this.taskService
-      .deleteTask(task.id)
+      .deleteTask(task)
       .subscribe()
   }
 
@@ -60,4 +62,18 @@ export class ListedesdevoirsComponent implements OnInit {
     this.uiService.toggleAddTask();
   }
 
+  peuplerBD(){
+    BDTasks.forEach( a => {
+        const newTask:Task = {
+        nom : a.nom,
+        id : a.id,
+        DateDeRendu : new Date(a.DateDeRendu),
+        rendu : a.rendu,
+        reminder : a.reminder
+        }
+      this.addTask(newTask)
+      console.log("cliqué")
+      }
+    )
+  }
 }

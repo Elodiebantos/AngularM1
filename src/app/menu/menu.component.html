@@ -19,44 +19,46 @@
 <mat-sidenav-container>
     <mat-sidenav class="mat-drawer-inner-container" [(opened)]="opened" mode="push"> 
         <mat-list>
-            <mat-list-item>
+            <mat-list-item class="list-item">
                 <button mat-button (click)="opened=!opened">
-                <mat-icon fontIcon="assignment">
+                <mat-icon fontIcon="calendar_today"  class="icon">
                 </mat-icon>
                 <a class="text-color" routerLink="/listedesdevoirs">
                     Liste des devoirs
                 </a>
                 </button>
             </mat-list-item>
-            <mat-list-item>
+            <mat-list-item class="list-item">
                 <button mat-button (click)="opened=!opened">
-                    <mat-icon fontIcon="assignment_returned">
+                    <mat-icon fontIcon="assignment_returned" class="icon">
                     </mat-icon>
                     <a class="text-color" routerLink="/modif"> 
                         Modification d'un devoir 
                     </a> 
                 </button>
             </mat-list-item>
-            <mat-list-item>
+            <mat-list-item class="list-item">
                 <button mat-button (click)="opened=!opened">
-                    <mat-icon fontIcon="delete_forever">
+                    <mat-icon fontIcon="delete_outline"  class="icon">
                     </mat-icon>
                     <a class="text-color" routerLink="/suppr"> 
                         Suppression d'un devoir
                     </a>
                 </button>
             </mat-list-item>
-            <mat-list-item>
+            <mat-list-item class="list-item">
                 <button mat-button (click)="opened=!opened">
-                    <mat-icon fontIcon="autorenew">
+                    <mat-icon fontIcon="autorenew"  class="icon">
                     </mat-icon>
                     <a class="text-color" routerLink="/generate"> 
                         Génération de données de test 
                     </a>
                 </button>
             </mat-list-item>
-            <mat-list-item>
+            <mat-list-item class="list-item">
                 <button mat-button (click)="opened=!opened">
+                    <mat-icon fontIcon="bookmark_border"  class="icon">
+                    </mat-icon>
                     <a class="text-color" routerLink="/edition"> 
                         Edition d'un devoir 
                     </a> 

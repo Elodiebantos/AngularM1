@@ -28,15 +28,16 @@ export class TasksService {
 
   getTasks(): Observable<Task[]> {
     // return this.http.get<Task[]>(this.apiUrl).pipe(catchError(this.handleError));
-    return this.http.get<Task[]>(this.mongoUrl).pipe(catchError(this.handleError))
+    return this.http.get<Task[]>(this.mongoUrl)
   }
 
-  deleteTask(nom: string): Observable<unknown> {
+  deleteTask(task: Task): Observable<unknown> {
     // const url = `${this.apiUrl}/${nom}`;
-    const url = `${this.mongoUrl}/${nom}`;
+    let deleteURI=this.mongoUrl+'/'+task._id;
+
     location.reload();
 
-    return this.http.delete(url, httpOptions);
+    return this.http.delete(deleteURI);
   }
 
   updateTaskReminder(task: Task): Observable<Task>{
@@ -55,20 +56,21 @@ export class TasksService {
   }
 
   addTask(task: Task): Observable<Task>{
+    return this.http.post<Task>(this.mongoUrl, task, httpOptions)
     // return this.http.post<Task>(this.apiUrl, task, httpOptions)
     // .pipe(map(a => {
     //   a.nom += " transformé avec un pipe"
     //   return a;
     // }));
-    return this.http.post<Task>(this.mongoUrl, task, httpOptions)
-    .pipe(map(a => {
-      a.nom += " transformé avec un pipe"
-      return a;
-    }),
-    tap(_ =>{
-      console.log("tap: assignment avec id" + `getTasks(id)` + "requête GET envoyée sur MangoDB Cloud");
-    })
-    );;
+    // return this.http.post<Task>(this.mongoUrl, task, httpOptions)
+    // .pipe(map(a => {
+    //   a.nom += " transformé avec un pipe"
+    //   return a;
+    // }),
+    // tap(_ =>{
+    //   console.log("tap: assignment avec id" + `getTasks(id)` + "requête GET envoyée sur MangoDB Cloud");
+    // })
+    // );;
   }
 
   updateTaskRendu(task:Task):Observable<Task>{
@@ -80,18 +82,18 @@ export class TasksService {
 
 
 
-  private handleError(error:any) {
-    if (error.status === 0) {
-      // A client-side or network error occurred. Handle it accordingly.
-      console.error('An error occurred:', error.error);
-    } else {
-      // The backend returned an unsuccessful response code.
-      // The response body may contain clues as to what went wrong.
-      console.error(
-        `Backend returned code ${error.status}, body was: `, error.error);
-    }
-    // Return an observable with a user-facing error message.
-    return throwError(() => new Error('Something bad happened; please try again later.'));
-  }
+  // private handleError(error:any) {
+  //   if (error.status === 0) {
+  //     // A client-side or network error occurred. Handle it accordingly.
+  //     console.error('An error occurred:', error.error);
+  //   } else {
+  //     // The backend returned an unsuccessful response code.
+  //     // The response body may contain clues as to what went wrong.
+  //     console.error(
+  //       `Backend returned code ${error.status}, body was: `, error.error);
+  //   }
+  //   // Return an observable with a user-facing error message.
+  //   return throwError(() => new Error('Something bad happened; please try again later.'));
+  // }
 
 }

@@ -36,7 +36,8 @@ function postAssignment(req, res){
         if(err){
             res.send('cant post assignment ', err);
         }
-        res.json({ message: `${assignment.nom} saved!`})
+        res.json({ message: `${req.body.nom} saved!`})
+        // J'ai modifié cette ligne dans le fichier Json pour régler mon problème d'erreur MongoDB
     })
 }
 

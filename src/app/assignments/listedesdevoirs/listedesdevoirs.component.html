@@ -1,11 +1,20 @@
 <div class="container"> 
-    <h2>Liste des devoirs à rendre</h2>
-    <app-button color = "{{ showAddTask ? '#C59D5F':'black' }}" text="{{ showAddTask ? 'Masquer':'Montrer' }}" (click)="toggleAddTask()"></app-button>
+    <div style="margin-bottom:35px">
+        <h2>Liste des devoirs à rendre 
+        <app-button style="float: right" color = "{{ showAddTask ? '#C59D5F':'black' }}" text="{{ showAddTask ? 'Masquer':'Montrer' }}" (click)="toggleAddTask()"></app-button>
+        </h2>
+    </div>
     <app-add-assignment (onAddTask)="addTask($event)"></app-add-assignment>
-    <app-assignment-details 
+    <app-assignment-details
             *ngFor="let task of tasks" 
             [task]="task" 
             (onDeleteTask)="deleteTask(task)"
             (onToggleReminder)="toggleReminder(task)"
     ></app-assignment-details>
+    <button 
+    class="btn"
+    (click)="peuplerBD()"
+    >
+        Peupler la base de données
+    </button>
 </div>

@@ -12,12 +12,13 @@ import { Subscription } from 'rxjs';
 export class AddAssignmentComponent implements OnInit {
   @Output() onAddTask: EventEmitter<Task> = new EventEmitter();
   
-  id!:string;
+  id!:number;
   nom!: string;
   DateDeRendu!:Date;
   rendu!:boolean;
   reminder!:boolean;
   showAddTask!: boolean;
+
   subscription : Subscription;
 
   // UIService permet de montrer et de cacher les modules d'ajout et de suppression de tâches
@@ -43,13 +44,14 @@ export class AddAssignmentComponent implements OnInit {
 
     const newTask = { 
       id:this.id,
-      identifiant:Math.floor(Math.random()*1000),
       nom:this.nom,
       DateDeRendu:this.DateDeRendu,
       rendu:this.rendu,
       reminder:this.reminder
     }
     this.onAddTask.emit(newTask);
+
+    location.reload();
   }
 
 

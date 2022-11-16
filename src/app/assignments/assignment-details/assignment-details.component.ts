@@ -1,12 +1,19 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Task } from '../../Interfaces/Tasks';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-assignment-details',
   templateUrl: './assignment-details.component.html',
-  styleUrls: ['./assignment-details.component.css']
+  styleUrls: ['./assignment-details.component.css'],
+  providers: [DatePipe]
 })
+
+// constructor(private datePipe: DatePipe){
+//   this.maDate = this.datePipe.transform(this.maDate, 'dd/MM/yyyy');
+// }
+
 
 
 export class AssignmentDetailsComponent implements OnInit {
@@ -28,4 +35,5 @@ export class AssignmentDetailsComponent implements OnInit {
     this.onToggleReminder.emit(task);
   }
 
+  // maDate = new Date();
 }

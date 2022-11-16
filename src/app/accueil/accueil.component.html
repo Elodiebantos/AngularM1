@@ -1,8 +1,10 @@
-<div>
+<header>
     <img class="img-alignment" src="assets/image/277672060_1364674820701891_6480569130382352976_n.png">
-    <nav style="text-align:center" class="open-close-container">
+</header>
+<body>
+    <div style="text-align:center" class="open-close-container">
         <h1 (click)="toggle()" class="clickableicon">Bienvenue sur le site de rendu des devoirs</h1>
-    </nav>
+    </div>
     <div  style="text-align:match-parent" [@openClose]="isOpen? 'open' : 'closed'">
         <p>
             Ce site est destiné aux étudiants de MIAGE en M1 et M2.
@@ -11,4 +13,15 @@
             Le site de rendu des devoirs est un espace de travail qui permet de tenir une liste des devoirs qu'ils auront à rendre au cours du semestre, activer un rappel, éditer ou déposer un devoir.
         </p>
     </div>
-</div>
+    <div>
+        <h3 style="margin-top: 40px;">
+            Description du site
+        </h3>
+    </div>
+    <p style="margin-top: 20px; justify-content: first baseline;">
+        Cette page est référencée dans le code Angular comme étant le component "accueil". Chaque élément qui apparaît dans le sidenav représente un component en angular. L'élément "Liste des devoirs" est celui qui regroupe la plupart des TP en Angular : il gère l'affichage, l'addition et la suppression de devoirs.
+    </p>
+    <p style="margin-top: 20px; justify-content: first baseline;">
+        Vous pouvez vous référer au fichier README du github pour plus d'informations.
+    </p>
+</body>

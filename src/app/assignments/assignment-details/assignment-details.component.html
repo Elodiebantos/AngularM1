@@ -1,4 +1,5 @@
 <div [ngClass]="{ reminder : task.reminder }" class="task" (dblclick)="onToggle(task)">
+    <p>{{task}}</p>
     <h3>
         {{task.nom}}
         <fa-icon 
@@ -7,5 +8,5 @@
         class = "clickableicon"
         ></fa-icon>
     </h3>
-    <p>Le devoir a été rendu le : {{task.DateDeRendu}}</p>
-</div>
+    <p> Le devoir a été rendu le : {{task.DateDeRendu | date}} </p>
+</div> 
