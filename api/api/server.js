@@ -6,9 +6,9 @@ let assignment = require('./routes/assignments');
 let mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 //mongoose.set('debug', true);
-//MongoParseError: option usefindandmodify is not supported    
+//MongoParseError: option usefindandmodify is not supported
 
-// remplacer toute cette chaine par l'URI de connexion à votre propre base dans le cloud s
+// remplacer toute cette chaine par l'URI de connexion à votre propre base dans le cloud
 const uri = 'mongodb+srv://ElodieBantos:Password@cluster0.x4makfe.mongodb.net/assignments?retryWrites=true&w=majority';
 
 const options = {
