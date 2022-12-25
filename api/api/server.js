@@ -2,14 +2,25 @@ let express = require('express');
 let app = express();
 let bodyParser = require('body-parser');
 let assignment = require('./routes/assignments');
-
+let login = require('./routes/login');
+const cors = require("cors");
+let passport = require('passport')
 let mongoose = require('mongoose');
+const {setDriver} = require("mongoose");
 mongoose.Promise = global.Promise;
 //mongoose.set('debug', true);
 //MongoParseError: option usefindandmodify is not supported
 
 // remplacer toute cette chaine par l'URI de connexion à votre propre base dans le cloud
-const uri = 'mongodb+srv://ElodieBantos:Password@cluster0.x4makfe.mongodb.net/assignments?retryWrites=true&w=majority';
+//const uri = 'mongodb+srv://ElodieBantos:Password@cluster0.x4makfe.mongodb.net/assignments?retryWrites=true&w=majority';
+const uri = 'mongodb+srv://tototititata972:8Htkuwu4bB3S3d9@cluster0.fixav9l.mongodb.net/?retryWrites=true&w=majority';
+
+
+let corsoptions = {
+  origin: "http://localhost:8081"
+};
+
+app.use(cors(corsoptions));
 
 const options = {
   useNewUrlParser: true,
@@ -39,6 +50,10 @@ app.use(function (req, res, next) {
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+// pour jwt
+app.use(passport.initialize())
+require('./config/passport')(passport)
+
 let port = process.env.PORT || 8010;
 
 // les routes
@@ -54,6 +69,15 @@ app.route(prefix + '/assignments/:id')
 app.route(prefix + '/assignments')
   .post(assignment.postAssignment)
   .put(assignment.updateAssignment);
+
+app.route(prefix + '/register')
+  .post(login.addNewUser)
+app.route(prefix + '/login')
+  .post(login.login)
+app.route(prefix + '/getinfo')
+  .get(login.getinfo)
+
+
 
 // On démarre le serveur
 app.listen(port, "0.0.0.0");
