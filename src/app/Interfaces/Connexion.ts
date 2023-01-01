@@ -1,4 +1,4 @@
 export interface Connexion {
-    id: any;
-    password: any;
+    utilisateur: String;
+    password: String;
 }

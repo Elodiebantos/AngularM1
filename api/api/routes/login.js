@@ -5,7 +5,7 @@ let config = require('../config/config')
 
 function addNewUser(req, res) {
     if ((!req.body.utilisateur) || (!req.body.password)) {
-      res.json({success: false, msg: "Veuillez enter tous les champs lolo"})
+      res.json({success: false, msg: "Veuillez enter tous les champs"})
     } else {
       let newUser = User({
         utilisateur: req.body.utilisateur,
@@ -19,6 +19,7 @@ function addNewUser(req, res) {
 }
 
 function login(req, res) {
+  console.log("Je suis bien la" + req.body)
   User.findOne({
       utilisateur: req.body.utilisateur
     },

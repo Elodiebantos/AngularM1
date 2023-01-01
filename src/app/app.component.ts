@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
   title = 'assignment_app';
-  apiURL = this.http.get('http://localhost:5000/tasks')
+  apiURL = this.http.get('http://localhost:8010/api');
 
   constructor(private http:HttpClient){}
 

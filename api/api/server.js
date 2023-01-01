@@ -16,11 +16,8 @@ mongoose.Promise = global.Promise;
 const uri = 'mongodb+srv://tototititata972:8Htkuwu4bB3S3d9@cluster0.fixav9l.mongodb.net/?retryWrites=true&w=majority';
 
 
-let corsoptions = {
-  origin: "http://localhost:8081"
-};
 
-app.use(cors(corsoptions));
+app.use(cors());
 
 const options = {
   useNewUrlParser: true,
@@ -38,13 +35,7 @@ mongoose.connect(uri, options)
       console.log('Erreur de connexion: ', err);
     });
 
-// Pour accepter les connexions cross-domain (CORS)
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-  next();
-});
+
 
 // Pour les formulaires
 app.use(bodyParser.urlencoded({extended: true}));

@@ -13,7 +13,7 @@ import { TokenService } from '../services/token.service';
 
 export class LoginComponent implements OnInit {
 
-  id!:any;
+  utilisateur!:any;
   password!:any;
 
   newConnexions:Connexion[] = []; //On crée un tableau dans lequel on va stocker les valeurs des nouvelles connexions
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   }
 
   onNewConnexion(newConnexion:Connexion){ //Si on clique sur "S'inscrire"
-    if (!this.id){ //Si on a pas rempli le nom d'utilisateur
+    if (!this.utilisateur){ //Si on a pas rempli le nom d'utilisateur
       alert('Veuillez ajouter un numéro étudiant');
       return;
     }
@@ -37,12 +37,12 @@ export class LoginComponent implements OnInit {
       alert('Veuillez ajouter un mot de passe.');
       return;
     }
-    this.connexionservice.addConnexion(newConnexion).subscribe((newConnexion) => (this.newConnexions.push(newConnexion))); 
+    this.connexionservice.addConnexion(newConnexion).subscribe((newConnexion) => (this.newConnexions.push(newConnexion)));
     //On rentre la donnée de connexion en passant par notre service (qui lui-même passe par la database json)
   }
 
   onSubmit():void{
-    if (!this.id){ //Si on a pas rempli le nom d'utilisateur
+    if (!this.utilisateur){ //Si on a pas rempli le nom d'utilisateur
       alert('Veuillez ajouter un numéro étudiant');
       return;
     }
@@ -50,13 +50,17 @@ export class LoginComponent implements OnInit {
       alert('Veuillez ajouter un mot de passe.');
       return;
     }
-    console.log()
+    this.connexion = {utilisateur:this.utilisateur, password:this.password}; //On récupère les données de connexion
     this.connexionservice.login(this.connexion).subscribe(
       data => {
-        console.log(data.access_token),
-        this.tokenservice.saveToken(data.access_token)
+        this.tokenservice.saveToken(data.toString());
+        console.log(data);
       },
       (err) => console.log(err)
     )
+  }
+
+  printRequest(){
+    console.log(this.connexion);
   }
 }

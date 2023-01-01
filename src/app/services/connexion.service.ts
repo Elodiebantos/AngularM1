@@ -8,7 +8,7 @@ import { IToken } from '../Interfaces/IToken';
   providedIn: 'root'
 })
 export class ConnexionService {
-  url = 'http://localhost:5000/login'
+  url = 'http://localhost:8010/api'
   Connexion!: Connexion;
 
   constructor(private http: HttpClient) { }
@@ -17,8 +17,11 @@ export class ConnexionService {
     return this.http.get<Connexion[]>(this.url);
   }
 
-  login(Connexion:Connexion):Observable<IToken>{
-    return this.http.post<IToken>(this.url, Connexion)
+
+  login(Connexion:Connexion):Observable<ArrayBuffer>{
+    console.log(Connexion.password)
+    console.log(Connexion.utilisateur)
+    return this.http.post<ArrayBuffer>(this.url+'/login',Connexion)
   }
 
   addConnexion(Connexion:Connexion):Observable<Connexion>{
