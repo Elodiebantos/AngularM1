@@ -3,6 +3,7 @@ import { ConnexionService } from '../services/connexion.service';
 import { Connexion } from '../Interfaces/Connexion';
 import { IToken } from '../Interfaces/IToken';
 import { TokenService } from '../services/token.service';
+import {MenuComponent} from "../menu/menu.component";
 
 @Component({
   selector: 'app-login',
@@ -54,6 +55,7 @@ export class LoginComponent implements OnInit {
     this.connexionservice.login(this.connexion).subscribe(
       data => {
         this.tokenservice.saveToken(data.toString());
+
         console.log(data);
       },
       (err) => console.log(err)

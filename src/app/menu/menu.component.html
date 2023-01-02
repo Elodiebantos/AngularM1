@@ -13,11 +13,23 @@
         <h1>Site de rendu des devoirs</h1>
         <span class="fill"></span>
         <img class="img-alignment" src="assets/image/MIAGE_LOGO-SEUL_BLANC.png">
-        <button class="button" (click)="connect()"><mat-icon fontIcon="account_circle"></mat-icon>Connexion</button>
+  <div *ngIf="this.isLogged()">
+    <button mat-button (click)="logout()">
+      <mat-icon fontIcon="logout">
+      </mat-icon>
+    </button>
+  <h1>{{this.user?.name}}</h1>
+  </div>
+      <div *ngIf="!this.isLogged()">
+        <button mat-button (click)="connect()">
+          <mat-icon fontIcon="lock_open">
+          </mat-icon>
+        </button>
+      </div>
     </mat-toolbar-row>
 </mat-toolbar>
 <mat-sidenav-container>
-    <mat-sidenav class="mat-drawer-inner-container" [(opened)]="opened" mode="push"> 
+    <mat-sidenav class="mat-drawer-inner-container" [(opened)]="opened" mode="push">
         <mat-list>
             <mat-list-item class="list-item">
                 <button mat-button (click)="opened=!opened">
@@ -32,16 +44,16 @@
                 <button mat-button (click)="opened=!opened">
                     <mat-icon fontIcon="assignment_returned" class="icon">
                     </mat-icon>
-                    <a class="text-color" routerLink="/modif"> 
-                        Modification d'un devoir 
-                    </a> 
+                    <a class="text-color" routerLink="/modif">
+                        Modification d'un devoir
+                    </a>
                 </button>
             </mat-list-item>
             <mat-list-item class="list-item">
                 <button mat-button (click)="opened=!opened">
                     <mat-icon fontIcon="delete_outline"  class="icon">
                     </mat-icon>
-                    <a class="text-color" routerLink="/suppr"> 
+                    <a class="text-color" routerLink="/suppr">
                         Suppression d'un devoir
                     </a>
                 </button>
@@ -50,8 +62,8 @@
                 <button mat-button (click)="opened=!opened">
                     <mat-icon fontIcon="autorenew"  class="icon">
                     </mat-icon>
-                    <a class="text-color" routerLink="/generate"> 
-                        Génération de données de test 
+                    <a class="text-color" routerLink="/generate">
+                        Génération de données de test
                     </a>
                 </button>
             </mat-list-item>
@@ -59,9 +71,9 @@
                 <button mat-button (click)="opened=!opened">
                     <mat-icon fontIcon="bookmark_border"  class="icon">
                     </mat-icon>
-                    <a class="text-color" routerLink="/edition"> 
-                        Edition d'un devoir 
-                    </a> 
+                    <a class="text-color" routerLink="/edition">
+                        Edition d'un devoir
+                    </a>
                 </button>
             </mat-list-item>
         </mat-list>
