@@ -55,6 +55,7 @@ export class LoginComponent implements OnInit {
     this.connexionservice.login(this.connexion).subscribe(
       data => {
         this.tokenservice.saveToken(data.toString());
+        this.tokenservice.saveUser(this.utilisateur);
 
         console.log(data);
       },

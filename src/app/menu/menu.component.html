@@ -15,10 +15,10 @@
         <img class="img-alignment" src="assets/image/MIAGE_LOGO-SEUL_BLANC.png">
   <div *ngIf="this.isLogged()">
     <button mat-button (click)="logout()">
+      <p> Étudiant N° :  {{this.getUtilisateur()}} </p>
       <mat-icon fontIcon="logout">
       </mat-icon>
     </button>
-  <h1>{{this.user?.name}}</h1>
   </div>
       <div *ngIf="!this.isLogged()">
         <button mat-button (click)="connect()">

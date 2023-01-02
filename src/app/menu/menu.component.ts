@@ -47,8 +47,10 @@ export class MenuComponent implements OnInit {
   }
 
   isLogged(){
-    console.log("LALLALALAL" + TokenService.isLogged());
   return TokenService.isLogged();
+  }
+  getUtilisateur(){
+    return TokenService.getUser();
   }
 
 
