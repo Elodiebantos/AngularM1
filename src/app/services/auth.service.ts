@@ -24,4 +24,16 @@ export class AuthService {
     return isUserAdmin;
   }
 
+  /** LOGIN VALIDE
+   *
+   * utilisateur : 22210840
+   *
+   * mot de passe : titititi
+   *
+   *
+   * utilisateur : 22210811
+   *
+   * mot de passe : nononono
+   */
+
 }
