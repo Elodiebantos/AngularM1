@@ -31,7 +31,7 @@ function login(req, res) {
         user.comparePassword(req.body.password, function (err, isMatch) {
           if (isMatch && !err) {
             let token = jwt.encode(user, config.secret)
-            res.json({success: true, token: token})
+            res.json({success: true, token: token, utilisateur: user.utilisateur})
           } else {
             return res.status(403).send({success: false, msg: "Authentification failed, mauvais mot de passe"})
           }
