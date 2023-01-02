@@ -38,8 +38,13 @@ export class LoginComponent implements OnInit {
       alert('Veuillez ajouter un mot de passe.');
       return;
     }
-    this.connexionservice.addConnexion(newConnexion).subscribe((newConnexion) => (this.newConnexions.push(newConnexion)));
-    //On rentre la donnée de connexion en passant par notre service (qui lui-même passe par la database json)
+    console.log("je suis la")
+    this.connexion = {utilisateur:this.utilisateur, password:this.password};
+    this.connexionservice.addConnexion(this.connexion).subscribe((connexion) => (this.newConnexions.push(connexion)));
+    alert('Vous êtes bien inscrit !');
+    // reload the page to see the new user
+    window.location.reload();
+
   }
 
   onSubmit():void{

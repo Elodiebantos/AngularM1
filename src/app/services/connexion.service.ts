@@ -19,12 +19,10 @@ export class ConnexionService {
 
 
   login(Connexion:Connexion):Observable<ArrayBuffer>{
-    console.log(Connexion.password)
-    console.log(Connexion.utilisateur)
     return this.http.post<ArrayBuffer>(this.url+'/login',Connexion)
   }
 
   addConnexion(Connexion:Connexion):Observable<Connexion>{
-    return this.http.post<Connexion>(this.url,Connexion)
+    return this.http.post<Connexion>(this.url +'/register',Connexion)
   }
 }
