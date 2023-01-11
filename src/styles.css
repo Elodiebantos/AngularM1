@@ -77,3 +77,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     animation-name: stretch;
     animation-duration: 1.5s;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+a,a:hover{
+	text-decoration:none;
+}

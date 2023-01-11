@@ -8,6 +8,8 @@
 
 # Node
 /node_modules
+api/api/node_modules
+api/_MACOSX
 npm-debug.log
 yarn-error.log
 
