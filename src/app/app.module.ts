@@ -18,7 +18,10 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { MatSelectModule } from '@angular/material/select';
+import { MatChip} from '@angular/material/chips';
+import { MatChipsModule } from '@angular/material/chips';
+import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
 
 import { AppComponent } from './app.component';
 import { AssignmentDetailsComponent } from './assignments/assignment-details/assignment-details.component';
@@ -59,7 +62,7 @@ import { EditAssignmentComponent } from './assignments/edit-assignment/edit-assi
     BrowserModule,
     BrowserAnimationsModule, MatDividerModule, MatIconModule, MatInputModule, MatFormFieldModule, FormsModule, MatButtonModule,
     MatDatepickerModule, MatNativeDateModule, MatListModule, MatCardModule, MatCheckboxModule, MatSidenavModule, MatToolbarModule, RouterModule, RouterTestingModule, AppRoutingModule, FontAwesomeModule, HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule, MatSelectModule, MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

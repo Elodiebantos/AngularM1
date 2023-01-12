@@ -1,1 +1,22 @@
-<p>generationdonneestest works!</p>
+<div class="container">
+    <h3> Informations supplémentaires </h3>
+    <h4> Sélectionnez le nom du cours </h4>
+    <mat-form-field appearance="fill">
+        <mat-label>Cours</mat-label>
+        <mat-select [(value)]="selected">
+          <mat-option value="base de données">Base de données</mat-option>
+          <mat-option value="communication">Communication</mat-option>
+          <mat-option value="anglais">Anglais</mat-option>
+          <mat-option value="outil d'ingénierie des besoins">Outil d'ingénierie des besoins</mat-option>
+          <mat-option value="big Data">Big Data</mat-option>
+          <mat-option value="angular">Angular</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <form *ngIf="selected">
+        <h4>Voici la liste des informations à connaître concernant le cours de : {{selected}}</h4>
+        <p>Pour les élèves ayant été absents le 22/12/2022, un examen de rattrapage aura lieu sur le site des Lucioles</p>
+        <p>Voulez-vous ajouter cette information à votre agenda ? </p>
+        <button class="btn" mat-raised-button (click)="Onclick()">Oui</button>
+        <button class="btn" mat-raised-button> Non </button>
+      </form>
+</div>
