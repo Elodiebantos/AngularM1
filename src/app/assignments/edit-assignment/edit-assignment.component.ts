@@ -12,11 +12,17 @@ import { Observable } from 'rxjs';
 export class EditAssignmentComponent implements OnInit {
   @Input() task!: Task;
 
-  id!:string;
+  id!:number;
+  auteur!:string;
+  matiere!:String;
   nom!: string;
-  DateDeRendu!:Date;
+  dateDeRendu!:Date;
   rendu!:boolean;
   reminder!:boolean;
+  showAddTask!: boolean;
+  note!:number;
+  remarque!:string;
+  photoProf!:string;
 
   constructor(
     private taskService:TasksService,
@@ -32,7 +38,7 @@ export class EditAssignmentComponent implements OnInit {
   //   id:this.id,
   //   identifiant:Math.floor(Math.random()*1000),
   //   nom:this.nom,
-  //   DateDeRendu:this.DateDeRendu,
+  //   dateDeRendu:this.dateDeRendu,
   //   rendu:this.rendu,
   //   reminder:this.reminder
   // }
@@ -50,7 +56,7 @@ export class EditAssignmentComponent implements OnInit {
         id:this.id,
         identifiant:Math.floor(Math.random()*1000),
         nom:this.nom,
-        DateDeRendu:this.DateDeRendu,
+        dateDeRendu:this.dateDeRendu,
         rendu:this.rendu,
         reminder:this.reminder
       }
@@ -65,7 +71,7 @@ export class EditAssignmentComponent implements OnInit {
  
     // on récupère les valeurs dans le formulaire
     this.task.nom = this.nom;
-    this.task.DateDeRendu = this.DateDeRendu;
+    this.task.dateDeRendu = this.dateDeRendu;
     this.taskService
       .updateTasks(this.task)
       // navigation vers la home page

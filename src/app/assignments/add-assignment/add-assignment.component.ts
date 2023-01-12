@@ -13,11 +13,16 @@ export class AddAssignmentComponent implements OnInit {
   @Output() onAddTask: EventEmitter<Task> = new EventEmitter();
   
   id!:number;
+  auteur!:string;
+  matiere!:string;
   nom!: string;
-  DateDeRendu!:Date;
+  dateDeRendu!:Date;
   rendu!:boolean;
   reminder!:boolean;
   showAddTask!: boolean;
+  note!:number;
+  remarque!:string;
+  photoProf!:string;
 
   subscription : Subscription;
 
@@ -37,17 +42,22 @@ export class AddAssignmentComponent implements OnInit {
       alert('Veuillez ajouter un nom de devoir.');
       return;
     }
-    if (!this.DateDeRendu){
+    if (!this.dateDeRendu){
       alert('Veuillez ajouter une date de rendu.');
       return;
     }
 
     const newTask = { 
       id:this.id,
+      auteur:this.auteur,
       nom:this.nom,
-      DateDeRendu:this.DateDeRendu,
+      matiere:this.matiere,
+      dateDeRendu:this.dateDeRendu,
       rendu:this.rendu,
-      reminder:this.reminder
+      reminder:this.reminder,
+      note:this.note,
+      remarque:this.remarque,
+      photoProf:this.photoProf
     }
     this.onAddTask.emit(newTask);
 

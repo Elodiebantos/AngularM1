@@ -3,13 +3,13 @@
     {
       "identifiant": 688,
       "nom": "Devoir",
-      "DateDeRendu": "2022-11-03",
+      "dateDeRendu": "2022-11-03",
       "id": 1
     },
     {
       "identifiant": 593,
       "nom": "Devoir2",
-      "DateDeRendu": "2022-11-03",
+      "dateDeRendu": "2022-11-03",
       "id": 2
     }
   ],

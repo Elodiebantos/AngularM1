@@ -25,16 +25,22 @@ function getAssignment(req, res){
 function postAssignment(req, res){
     let assignment = new Assignment();
     assignment.id = req.body.id;
+    assignment.matiere= req.body.matiere;
     assignment.nom = req.body.nom;
     assignment.dateDeRendu = req.body.dateDeRendu;
     assignment.rendu = req.body.rendu;
+    assignment.reminder = req.body.reminder;
+    assignment.note = req.body.note;
+    assignment.remarque = req.body.remarque
+    assignment.auteur = req.body.auteur;
+    assignment.photoProf = req.body.photoProf;
 
     console.log("POST assignment reçu :");
     console.log(assignment)
 
     assignment.save( (err) => {
         if(err){
-            res.send('cant post assignment ', err);
+            res.status(500).send(err)
         }
         res.json({ message: `${req.body.nom} saved!`})
         // J'ai modifié cette ligne dans le fichier Json pour régler mon problème d'erreur MongoDB

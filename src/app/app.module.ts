@@ -39,6 +39,7 @@ import { AproposComponent } from './footer/apropos/apropos.component';
 import { PlanDuSiteComponent } from './footer/plan-du-site/plan-du-site.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { EditAssignmentComponent } from './assignments/edit-assignment/edit-assignment.component';
+import {MaterialModule} from './material-module';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,7 @@ import { EditAssignmentComponent } from './assignments/edit-assignment/edit-assi
     BrowserModule,
     BrowserAnimationsModule, MatDividerModule, MatIconModule, MatInputModule, MatFormFieldModule, FormsModule, MatButtonModule,
     MatDatepickerModule, MatNativeDateModule, MatListModule, MatCardModule, MatCheckboxModule, MatSidenavModule, MatToolbarModule, RouterModule, RouterTestingModule, AppRoutingModule, FontAwesomeModule, HttpClientModule,
-    ReactiveFormsModule, MatSelectModule, MatChipsModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

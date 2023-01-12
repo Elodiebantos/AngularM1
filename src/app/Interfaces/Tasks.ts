@@ -1,8 +1,13 @@
 export interface Task {
     _id? : string;
     id: number;
+    auteur: string,
+    matiere: string,
     nom: string;
-    DateDeRendu: Date;
+    dateDeRendu: Date;
     rendu?:boolean;
     reminder?:boolean;
+    note?: number,
+    remarque?: string,
+    photoProf?: string
 }
