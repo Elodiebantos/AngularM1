@@ -13,8 +13,8 @@ mongoose.Promise = global.Promise;
 
 // remplacer toute cette chaine par l'URI de connexion à votre propre base dans le cloud
 //const uri = 'mongodb+srv://ElodieBantos:Password@cluster0.x4makfe.mongodb.net/assignments?retryWrites=true&w=majority';
-//const uri = 'mongodb+srv://tototititata972:8Htkuwu4bB3S3d9@cluster0.fixav9l.mongodb.net/?retryWrites=true&w=majority';
-const uri = 'mongodb+srv://ElodieBantos:Password@cluster0.x4makfe.mongodb.net/assignments?retryWrites=true&w=majority';
+const uri = 'mongodb+srv://tototititata972:8Htkuwu4bB3S3d9@cluster0.fixav9l.mongodb.net/?retryWrites=true&w=majority';
+//const uri = 'mongodb+srv://ElodieBantos:Password@cluster0.x4makfe.mongodb.net/assignments?retryWrites=true&w=majority';
 
 
 app.use(cors());
