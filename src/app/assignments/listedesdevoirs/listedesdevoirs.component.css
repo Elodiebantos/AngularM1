@@ -12,5 +12,5 @@ table {
     cursor: pointer;
 }
 
-.renduClignote {color:#e60000;animation: renduClignote 1s linear infinite;}
-@keyframes renduClignote {50% { opacity: 0.6; }}
+.renduClignote {color:#e60000;animation: renduClignote 2s linear infinite;}
+@keyframes renduClignote {50% { color:blue;opacity: 0.6; }}
