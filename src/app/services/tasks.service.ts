@@ -6,7 +6,7 @@ import { Task } from '../Interfaces/Tasks';
 import { map,tap } from 'rxjs/operators';
 import { LoggingService } from './loggin.service';
 
-const httpOptions = { 
+const httpOptions = {
   headers : new HttpHeaders({
     'Content-Type': 'application/json'
   }),
@@ -22,7 +22,7 @@ export class TasksService {
   Task!:Task;
 
   // apiUrl = 'http://localhost:5000/tasks'
-  mongoUrl = 'http://localhost:8010/api/assignments'
+  mongoUrl = 'https://angularm1frontend.onrender.com/api/assignments'
   constructor(private logginService:LoggingService,
     private http:HttpClient) { }
 
