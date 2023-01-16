@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Task } from '../../Interfaces/Tasks';
 import { TasksService } from '../../services/tasks.service';
 import { UiService } from 'src/app/services/ui.service';
 import { Subscription } from 'rxjs';
+import { MatPaginator } from '@angular/material/paginator';
 
 import { BDTasks } from '../data';
 @Component({
@@ -13,13 +14,18 @@ import { BDTasks } from '../data';
 export class ListedesdevoirsComponent implements OnInit {
   tasks: Task[] = [];
   showAddTask!:boolean;
+  totalTasks: number = this.tasks.length;
   subscription: Subscription;
   displayedColumns: string[] = ['auteur','matiere','nom', 'dateDeRendu','note', 'rendu', 'reminder','remarque', 'photoProf', 'supprimer' ];
+
+  @ViewChild(MatPaginator, {static: false}) paginator!: MatPaginator;
+  
   constructor(public taskService: TasksService,public uiService:UiService){
     this.subscription = this.uiService
     .onToggle()
     .subscribe((value) => (this.showAddTask = value));
   }
+
 
   ngOnInit(): void {
     this.taskService.getTasks()
@@ -61,6 +67,9 @@ export class ListedesdevoirsComponent implements OnInit {
     this.uiService.toggleAddTask();
   }
 
+  toggle
+
+
   peuplerBD(){
     const matieres = ["Anglais", "Java", "Base de données", "Développement Node", "Spring Boot", "Grails", "Italien","Portugais","Espagnol","Dév Back-end","ReactJS","Administration de serveur", "Allemand", "Développement C#", ".NET", "C++", "HTML5 / CSS3", "Javascript", "Front-end", "Développement Serveur Node", "Virtual Box", "VMware"];
     const noms = ["Examen", "TD", "TP", "Contrôle", "Leçon", "Interro Orale", "Soutenance", "Présentation", "Rapport", "Powerpoint"]
@@ -69,7 +78,7 @@ export class ListedesdevoirsComponent implements OnInit {
       let noteRendu = booleenRendu? Math.floor(Math.random() * 20) : undefined
       let modulo= i>70?i%70:i;
       const newTask:Task = {
-        auteur: "Hugo",
+        auteur: "Elodie",
         matiere : matieres[Math.floor(Math.random() * matieres.length)],
         nom: noms[Math.floor(Math.random() * noms.length)],
         id : i,
