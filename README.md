@@ -53,7 +53,11 @@ I tried to improve my skills in Angular by creating a button that is directly a 
 
 ## Menu component
 
+Menu déployé avec une navbar
+
 ## Footer component
+
+Footer déployé avec un formulaire de contact
 
 ## Login component
 
